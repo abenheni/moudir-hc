@@ -3,14 +3,17 @@ import NavBar from './components/NavBar';
 import TaskList from './components/TaskList';
 import ToggleTheme from './components/ToggleTheme';
 import ThemeContextProvider from './contexts/ThemeContext';
+import AuthContextProvider from './contexts/AuthContext';
 
 function App() {
   return (
     <div className='App'>
       <ThemeContextProvider>
-        <NavBar />
-        <TaskList />
-        <ToggleTheme />
+        <AuthContextProvider>
+          <NavBar />
+          <TaskList />
+          <ToggleTheme />
+        </AuthContextProvider>
       </ThemeContextProvider>
     </div>
   );
