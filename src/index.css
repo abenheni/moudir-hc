@@ -36,3 +36,9 @@ nav ul li {
   margin: 10px auto;
   border-radius: 10px;
 }
+
+.auth-box {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: chocolate;
+}
