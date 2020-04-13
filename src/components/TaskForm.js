@@ -19,3 +19,5 @@ const NewTaskForm = () => {
         </form>
     )
 }
+
+export default NewTaskForm;

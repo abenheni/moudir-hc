@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
 import ToggleTheme from './components/ToggleTheme';
 import ThemeContextProvider from './contexts/ThemeContext';
 import AuthContextProvider from './contexts/AuthContext';
@@ -14,6 +15,7 @@ function App() {
           <NavBar />
           <TaskContextProvider>
             <TaskList />
+            <TaskForm />
           </TaskContextProvider>
           <ToggleTheme />
         </AuthContextProvider>

@@ -9,12 +9,12 @@ const TaskList = () => {
     const theme = isLightTheme ? light : dark;
     return(
         <div className='task-list' style={{ color: theme.content, background: theme.bg }}>
-                    <ul>
-                        {tasks.map((task) => {
-                            return(<TaskDetails task={task} key={task.id} />)
-                        })}
-                    </ul>
-                </div>
+            <ul>
+                {tasks.map((task) => {
+                    return(<TaskDetails task={task} key={task.id} />)
+                })}
+            </ul>
+        </div>
     );
 }
 
