@@ -9,6 +9,7 @@ const NewTaskForm = () => {
         dispatch({type: 'ADD_TASK', task: {
             description
         }})
+        setDescription('');
     }
 
     return(

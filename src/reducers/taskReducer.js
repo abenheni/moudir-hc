@@ -1,13 +1,13 @@
-import uuid from 'uuid/v1';
+import { v1 as  uuidv1 } from 'uuid';
 
 export const taskReducer = (state, action) => {
     switch(action.type) {
         case 'ADD_TASK':
             return [...state, {
                 description: action.task.description,
-                id: uuid()
+                id: uuidv1()
             }]
-        case 'REMOVE_BOOK':
+        case 'REMOVE_TASK':
             return state.filter(task => task.id !== action.id)
         default:
             return state
