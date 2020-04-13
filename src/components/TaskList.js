@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { TaskContext } from '../contexts/TaskContext';
+import TaskDetails from './TaskDetails';
 
-class TaskList extends Component {
-
-    render() {
-        return(
-            <ThemeContext.Consumer>{(context) => {
-                const { isLightTheme, light, dark } = context;
-                const theme = isLightTheme ? light : dark;
-                return(
-                <div className='task-list' style={{ color: theme.content, background: theme.bg }}>
+const TaskList = () => {
+    const { isLightTheme, light, dark } = useContext(ThemeContext);
+    const { tasks } = useContext(TaskContext);
+    const theme = isLightTheme ? light : dark;
+    return(
+        <div className='task-list' style={{ color: theme.content, background: theme.bg }}>
                     <ul>
-                        <li style={{ background: theme.ui }}>Stock supplies</li>
-                        <li style={{ background: theme.ui }}>Fight corona</li>
-                        <li style={{ background: theme.ui }}>Write an article</li>
+                        {tasks.map((task) => {
+                            return(<TaskDetails task={task} key={task.id} />)
+                        })}
                     </ul>
                 </div>
-                )
-            }}
-
-            </ThemeContext.Consumer>
-        );
-    }
+    );
 }
 
 export default TaskList;
